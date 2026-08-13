@@ -1,0 +1,34 @@
+# Documentary Exhibit Index
+
+The screenshots associated with this archive are preserved as documentary context. **They are not all evidence of the same proposition.** Each exhibit is assigned a conservative evidentiary weight so that context-only material is not misrepresented as technical proof.
+
+| # | Intended archive filename | What it visibly documents | Weight / use |
+|---|---|---|---|
+| 01 | `01_nousresearch_block_notice.jpeg` | X interface displaying an `@NousResearch has blocked you` notice | **D — context only.** No inference of copying, infringement, motive, or wrongdoing. |
+| 02 | `02_shl0ms_automated_by_nous_block_notice.png` | X profile showing “Automated by @NousResearch” and a block notice | **D — context only.** No inference of technical access or wrongdoing. |
+| 03 | `03_teknium_repost_phera.jpeg` | Teknium account reposting a Phera/Cory post discussing Hermes and showing project/test imagery | **C/B — public visibility/contact.** Shows interaction/republication, not copying. |
+| 04 | `04_discord_teknium_contact.jpeg` | Hermes-agent Discord interaction involving Phera and Teknium | **C — contact/community context.** |
+| 05 | `05_scoble_context.png` | Third-party public commentary involving Robert Scoble | **D — third-party opinion/context only.** Not evidence against Nous. |
+| 06 | `06_scoble_roon_public_visibility.png` | Public likes/replies from verified accounts | **C — public visibility only.** |
+| 07 | `07_github_pr_2088.png` | Mobile view of `NousResearch/hermes-agent#2088`, Cory's sanitized COSMOS audit PR | **A — submission/contact chronology.** Native GitHub metadata/PR is stronger than the screenshot. |
+| 08 | `08_teknium_external_pr_merge.png` | Teknium post about an unrelated external Hermes PR being merged | **D/C — ecosystem context only.** Does not show Cory's work was merged. |
+| 09 | `09_discord_qbit_memory_discussion.png` | Phera publicly discussing “qbit memory”/token savings in Hermes Discord; another participant asks about memory-before-token usage; nearby session-continuity discussion | **B — public technical-disclosure/community-awareness context.** Exact Discord IDs/timestamps should be preserved when available. |
+| 10 | `10_discord_cosmos_contribution_state_persistence.png` | Phera posts COSMOS contribution link; a NOUS-badged participant calls it a “Nice contribution” and asks about “agent coordination or state persistence across tasks” | **B+ — strongest screenshot for direct technical awareness/contact.** Still not proof of copying or pre-February access. |
+
+## Evidence hierarchy
+
+**A — Primary technical/provenance evidence**  
+Immutable Git commits, source code, platform-native PR metadata, DOI/version records, reproducible tests/results.
+
+**B — Strong corroborating/contact evidence**  
+Platform-native technical discussions, direct references to the contribution, dated technical correspondence.
+
+**C — Visibility/context evidence**  
+Likes, reposts, broad social interactions.
+
+**D — Context only**  
+Blocks, opinions, unrelated events. Preserved for completeness but not used to infer wrongdoing.
+
+## Preservation note
+
+Interpretation should remain separate from the raw exhibits. Descriptions can be corrected later without modifying the underlying image evidence or its cryptographic fingerprint.
