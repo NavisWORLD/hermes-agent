@@ -1,4 +1,4 @@
-# CST / COSMOS ↔ Hermes-Agent — Prior-Art Candidate & Provenance Timeline
+# CST / COSMOS ↔ Hermes-Agent - Prior-Art Candidate & Provenance Timeline
 
 **Prepared as a documentary chronology, not an accusation.**  
 **Maintainer / earlier-disclosure researcher:** Cory Davis / NavisWORLD  
@@ -9,278 +9,286 @@
 
 This document asks a narrow factual question:
 
-> **When did specific technical mechanisms become publicly inspectable in the cited repositories, and what did those public artifacts actually implement?**
+> **When did specific technical mechanisms become inspectable in the cited source history, and what did those artifacts actually implement?**
 
 It does **not** assert that Nous Research copied CST/COSMOS, that any person saw a particular file before implementing a feature, that any patent is valid/invalid, or that any party infringed another party's rights.
 
-For patent-law research, broad similarity is not enough. A serious anticipation analysis is claim-by-claim and asks whether the relevant earlier reference contains the required claim elements arranged as claimed and is sufficiently enabling. See USPTO MPEP § 2131, § 2152 and § 2121.
+For patent-law research, broad similarity is not enough. Anticipation analysis is claim-by-claim and depends on the elements actually disclosed, their arrangement, enablement, effective filing dates and historical public accessibility. See USPTO MPEP § 2131, § 2152, § 2121 and § 2128.
 
 For the expanded source audit, see [`MASTER_RECEIPT_AUDIT.md`](./MASTER_RECEIPT_AUDIT.md).
 
 ---
 
-## 2. High-confidence chronology
+# 2. Corrected high-confidence chronology
 
-### 2025-01-30 — Earliest located public CST/CosmicSynapse memory-and-learning source artifact
+## 2025-01-30 - earliest located CST/CosmicSynapse memory-and-learning source artifact
 
 **Repository:** `PHERACLEASE/test`  
 **File:** `test1maybe.py`  
 **Commit:** `10e86764c6d743b5ceaaaf1baab7279a0d6f0ba5`  
 **URL:** https://github.com/PHERACLEASE/test/commit/10e86764c6d743b5ceaaaf1baab7279a0d6f0ba5
 
-The historical source contains executable behavior including:
+The historical source contains:
 
-- a fixed-size particle memory array;
-- a named `LearningMechanism` that updates retained memory from frequency/environmental features;
-- a rolling update using `np.roll(...)`, followed by writes of new normalized features into the newest memory slots;
-- adaptive behavior that consumes retained memory together with neural-network output;
-- `COSMIC_BRAIN_FILE = "cosmic_brain.json"`;
-- `save_cosmic_brain()` that reads pre-existing JSON when present, adds a timestamp-keyed observation, and writes the accumulated data back;
-- JSON, SQLite and pickle loaders;
-- feedback-driven parameter adaptation in `MathSystem.evolve()`.
+- fixed-size particle memory;
+- a named `LearningMechanism`;
+- rolling `np.roll(...)` memory updates;
+- memory-informed adaptive behavior;
+- persistent `cosmic_brain.json` accumulation;
+- feedback-driven parameter adaptation.
 
-The file instantiates a PyTorch model and optimizer, but this audit did not locate an actual `loss.backward()` / `optimizer.step()` training path in the January snapshot. That optimizer declaration is therefore **not** used as proof of completed neural-network training.
+A PyTorch model and optimizer are instantiated, but the audit did not locate an actual `loss.backward()` / `optimizer.step()` training path in this January snapshot. The optimizer declaration is not used as proof of completed neural training.
 
-**Identity/provenance caveat:** archive maintainer Cory Davis identifies `PHERACLEASE` as a legacy account. The currently inspected public GitHub profile metadata does not independently cross-link `PHERACLEASE` and `NavisWORLD`, so the account-attribution statement is kept separate from the independently verifiable public code/date.
+**Identity/provenance caveat:** Cory identifies `PHERACLEASE` as a legacy account. The inspected public GitHub profile metadata did not independently cross-link `PHERACLEASE` and `NavisWORLD`, so the attribution statement is kept separate from the independently verifiable source/date.
 
-**Evidence weight:** A for technical source/date; separate attribution caveat retained.
+**Evidence weight:** A for technical source/date; separate identity caveat retained.
 
-See [`EARLY_SOURCE_CHRONOLOGY.md`](./EARLY_SOURCE_CHRONOLOGY.md).
-
-### 2025-02-26 — Public CST-LM automatic save/load memory restoration
+## 2025-02-26 - CST-LM automatic save/load memory restoration
 
 **Repository:** `NavisWORLD/CosmicSynapse`  
 **Commit:** `f4e7da1f1bf3fba07a23a3de932e675bea5078bd`  
 **URL:** https://github.com/NavisWORLD/CosmicSynapse/commit/f4e7da1f1bf3fba07a23a3de932e675bea5078bd
 
-The committed CST-LM implementation contains executable behavior including:
+The source contains:
 
 - `self.memory = []`;
 - `self.state_file = "cst_lm_state.json"`;
-- `self.load_state()` invoked during initialization;
-- an explicit `learn()` method that appends learned items to memory;
-- bounded retention (`> 1000` removes the oldest memory item);
-- `save_state()` serializing vocabulary + memory;
-- `load_state()` restoring vocabulary + memory from persistent storage.
+- initialization-time `self.load_state()`;
+- explicit `learn()`;
+- a 1,000-item retention bound;
+- `save_state()`;
+- `load_state()` restoration.
 
-The larger CST simulation in the same public snapshot also includes `cosmic_brain.json`, retained histories, serialized/restored internal state and staged evolution state.
+**Evidence weight:** A - source-level implementation and dated Git history.
 
-**Evidence weight:** A — source-code implementation with public Git history.
+## 2025-05-21 - maintained evolving world/environment state + sensory bridge
 
-### 2025-07-23 — First public Hermes-Agent commit located
+**Repository:** `NavisWORLD/The-theory-of-CST`  
+**Commit:** `b96a56501cb447cb68e2683915d22024a0c526dd`  
+**URL:** https://github.com/NavisWORLD/The-theory-of-CST/commit/b96a56501cb447cb68e2683915d22024a0c526dd  
+**Timestamp:** `2025-05-21T08:04:53Z`
+
+The historical Python/Unity source includes:
+
+- entities with evolving retained position/velocity/energy/synaptic/ecosystem state;
+- high-dimensional simulation variables projected into a live environment;
+- microphone/audio-derived input feeding state updates;
+- Python-to-Unity communication;
+- procedural world/entity generation;
+- timestamped/token-oriented `MemoryNodeLog` state records;
+- temporal world evolution and interacting entities.
+
+**Current assessment:** an important earlier public source receipt for Cory's own persistent world-state / sensory-environment lineage.
+
+**Boundary:** not a claim that Cory globally invented world models, model-based RL or spatial intelligence.
+
+**Evidence weight:** A - historical source commit.
+
+## 2025-07-23 - first located public Hermes-Agent commit
 
 **Repository:** `NousResearch/hermes-agent`  
 **Commit:** `21d80ca68346dfdb8d3556015a723a9217f8566f`  
 **URL:** https://github.com/NousResearch/hermes-agent/commit/21d80ca68346dfdb8d3556015a723a9217f8566f
 
-The initial source implements a real tool-calling AI agent and accepts caller-supplied `conversation_history`. The reviewed evidence does **not** establish Cory priority over Hermes on the generic concept of a tool-calling agent, and this archive makes no such claim.
+The initial source implements a real tool-calling AI agent and accepts caller-supplied `conversation_history`.
 
-**Evidence weight:** A — source-code chronology.
+**Current assessment:** no Cory-priority claim for the generic tool-calling-agent concept.
 
-### 2025-10-28 — Public A-LMI autonomous learning + multi-store memory architecture
+## 2025-10-28 02:21:23Z - original A-LMI autonomous learning + multi-store memory
+
+**Repository:** `NavisWORLD/cosmic-synapse-A-lmi`  
+**Commit:** `527cd7084d25c40275af77b5b7a5397a31ed6179`  
+**URL:** https://github.com/NavisWORLD/cosmic-synapse-A-lmi/commit/527cd7084d25c40275af77b5b7a5397a31ed6179
+
+This is now the primary A-LMI chronology anchor. The source/documented implementation includes:
+
+- web/audio perception;
+- Milvus vector memory;
+- MinIO object/raw storage;
+- Neo4j temporal/graph memory;
+- knowledge-gap discovery;
+- hypothesis generation;
+- action/experiment planning;
+- a closed loop from **hypothesis -> action -> data -> knowledge**;
+- tests for closed autonomous learning and key subsystems.
+
+**Current assessment:** strong earlier public autonomous-agent / multi-store-memory receipt.
+
+**Evidence weight:** A.
+
+## 2025-10-28 17:05:40Z - A-LMI v2 expansion
 
 **Repository:** `NavisWORLD/cosmic-synapse-A-lmi-v.2`  
 **Commit:** `8af672ff74f5506d1f9d26ae94ddaf1ca91a7962`  
 **URL:** https://github.com/NavisWORLD/cosmic-synapse-A-lmi-v.2/commit/8af672ff74f5506d1f9d26ae94ddaf1ca91a7962
 
-The public `a_lmi/core/agent.py` implements a perception-cognition-action architecture with perceptual ingestion, cognition, reasoning triggers, autonomous hypothesis investigation, action handling and `learning_goal` handling. File-specific Git history ties the following memory-store clients to this same public commit:
+The public `a_lmi/core/agent.py` implements explicit perception/cognition/action lanes, vector/object/temporal-graph storage, reasoning triggers, autonomous hypothesis investigation and `learning_goal` handling.
 
-- `a_lmi/memory/vector_db_client.py`;
-- `a_lmi/memory/object_storage_client.py`;
-- `a_lmi/memory/tkg_client.py`.
+**Current assessment:** strong expansion receipt, but no longer allowed to make the original A-LMI architecture look later than it was.
 
-**Evidence weight:** A — source-code implementation plus file-specific Git history.
-
-### 2025-11-10 — Executable learning + persistent token save/load
+## 2025-11-10 - executable learning + persistent token save/load
 
 **Repository:** `NavisWORLD/infinite-adaptive-audio-12d-universe-engine`  
-**Commit:** `5172412deec6c037b058ba489c9676a4553a4efe`  
-**URL:** https://github.com/NavisWORLD/infinite-adaptive-audio-12d-universe-engine/commit/5172412deec6c037b058ba489c9676a4553a4efe
+**Commit:** `5172412deec6c037b058ba489c9676a4553a4efe`
 
-The historical commit diff contains:
+Historical diff contains:
 
-- a `NeuralNetworkAdapter` with explicit forward and backward weight-update logic;
-- `updateMemoryFromNeighbors()` for Hebbian-like neighbor memory adaptation;
-- current audio/frequency features integrated into memory;
-- `saveTokensToStorage()`, `loadTokensFromStorage()` and `autoSaveTokens()`;
-- a 60-second localStorage autosave interval and startup loading.
+- `NeuralNetworkAdapter` forward/backward weight updates;
+- `updateMemoryFromNeighbors()`;
+- audio/frequency information integrated into memory;
+- `saveTokensToStorage()` / `loadTokensFromStorage()` / `autoSaveTokens()`;
+- 60-second localStorage autosave and startup loading.
 
-This is stronger than a commit message alone because the implementation appears directly in the historical diff.
+**Evidence weight:** A.
 
-**Evidence weight:** A — historical executable source diff.
+## 2025-11-15 21:13:25Z - bounded continuous pattern-memory learning
 
-### 2025-11-15 — Bounded continuous pattern-memory learning
-
-**Repository:** `NavisWORLD/infinite-adaptive-audio-12d-universe-engine`  
 **Commit:** `bbae16f878252f722112f3b1dcc5750daea6124c`  
 **URL:** https://github.com/NavisWORLD/infinite-adaptive-audio-12d-universe-engine/commit/bbae16f878252f722112f3b1dcc5750daea6124c
 
-The added `music project/ULTIMATE_12D_CONTINUOUS_LEARNING_ENHANCED.html` defines a fixed-capacity `RingBuffer`, creates `BandLearningSystem.patternMemory = new RingBuffer(128)`, pushes observed patterns into retained memory, and changes confidence/success state based on observed outcomes.
+The source defines fixed-capacity `RingBuffer` memory, `BandLearningSystem.patternMemory = new RingBuffer(128)`, retained successful-pattern state and confidence/adaptation state.
 
-**Evidence weight:** A — source-code implementation in an immutable historical diff.
+**Timestamp correction:** GitHub records this commit at **2025-11-15T21:13:25Z**.
 
-### 2025-11-21 — Trainable memory-augmented Hebbian Transformer
+**Evidence weight:** A.
 
-**Repository:** `NavisWORLD/The-Cosmic-Davis-12D-Hebbian-Transformer-`  
-**Historical source path:** `packages/cosmic-synapse-transformer/cosmic_synapse/models/cosmic_synapse_transformer.py`
+## 2025-11-21 - trainable memory-augmented Hebbian Transformer
 
-File history ties this implementation to the public repository by **2025-11-21**. The source includes:
+**Repository:** `NavisWORLD/The-Cosmic-Davis-12D-Hebbian-Transformer-`
 
-- a configured fixed episodic-memory size;
-- memory embeddings + x12 memory buffers;
-- circular-memory pointer/fill tracking;
-- memory updates during training;
-- semantic + x12-adaptive similarity retrieval;
-- retrieved-memory injection into transformer processing;
+Historical model source includes:
+
+- fixed episodic-memory capacity;
+- memory embeddings + x12 state memory;
+- circular overwrite behavior;
+- semantic + x12 similarity retrieval;
+- retrieved-memory injection;
 - Hebbian-modulated attention;
-- adaptive x12 internal-state dynamics;
-- ordinary gradient training through `loss.backward()` and `optimizer.step()` in the trainer.
+- ordinary gradient training.
 
-**Evidence weight:** A — executable historical model source + file-specific commit history.
+**Boundary:** strong in-process memory-augmented retrieval receipt, but not the archive's strongest cross-restart persistence proof.
 
-### 2025-11-22 — Continuous self-directed autonomous study
+## 2025-11-22 - continuous self-directed autonomous study
 
-**Repository:** `NavisWORLD/The-Cosmic-Davis-12D-Hebbian-Transformer-`  
 **File:** `experiments/42d_singularity/autonomous_study.py`  
-**Commit:** `dd70bc60faf841a51bfbc9dac1014e0462d45658`  
-**URL:** https://github.com/NavisWORLD/The-Cosmic-Davis-12D-Hebbian-Transformer-/commit/dd70bc60faf841a51bfbc9dac1014e0462d45658
+**Commit:** `dd70bc60faf841a51bfbc9dac1014e0462d45658`
 
-The historical source describes and implements a continuous self-directed study loop that selects curriculum categories/sources, ingests content, trains 12D and 42D models, logs comparative losses/results, saves model checkpoints and continues the loop.
+The source repeatedly selects curriculum/source material, ingests content, trains models, logs results and saves checkpoints.
 
-This is evidence of autonomous/self-directed training, **not** an asserted equivalent of Hermes's later self-writing reusable skill documents.
+**Boundary:** autonomous/self-directed training, not an asserted exact equivalent of Hermes's later self-writing reusable skill documents.
 
-**Evidence weight:** A — executable historical source + file path history.
+## 2026-02-19 - Hermes explicit persistent-memory + SQLite system
 
-### 2026-02-19 — Hermes explicit persistent-memory + SQLite system
+**Commit:** `440c244cac71f0764e00ea85ab87ae0a2d18fe61`
 
-**Commit:** `440c244cac71f0764e00ea85ab87ae0a2d18fe61`  
-**URL:** https://github.com/NousResearch/hermes-agent/commit/440c244cac71f0764e00ea85ab87ae0a2d18fe61
+The commit adds/implements persistent MEMORY/USER stores, bounded curated memory, startup/session injection, SQLite session persistence, FTS5 search and linked session behavior.
 
-Commit title: `feat: add persistent memory system + SQLite session store`
+**Evidence weight:** A.
 
-The commit describes/implements `MEMORY.md` and `USER.md` persistent stores, bounded curated memory, replacement/removal/pruning behavior, memory injection at session start, SQLite session persistence, FTS5 session search, session-search tooling and linked session splitting.
+## 2026-02-20 - Hermes agent-created procedural skills
 
-**Evidence weight:** A — feature-specific source commit.
+**Commit:** `4d5f29c74ca99928f053ac55d2f780be61b827df`
 
-### 2026-02-20 — Hermes agent-created procedural skills
+The agent can create, update and delete reusable skills described as procedural memory.
 
-**Commit:** `4d5f29c74ca99928f053ac55d2f780be61b827df`  
-**URL:** https://github.com/NousResearch/hermes-agent/commit/4d5f29c74ca99928f053ac55d2f780be61b827df
+**Current assessment:** the catalogued pre-Hermes CST/A-LMI record is **not asserted to anticipate the exact agent-authored `SKILL.md` mechanism**.
 
-The commit explicitly adds skill management allowing the agent to create, update and delete reusable skills, described as procedural memory.
+## 2026-03-06 - Hermes self-improving-agent positioning
 
-This is more specific than a general autonomous-learning loop. The pre-Hermes CST/A-LMI record currently catalogued here is therefore **not asserted to anticipate the exact Hermes agent-authored `SKILL.md` mechanism**.
+**Commit:** `2dbbedc05a7fec7a4efe7db0f305e15393d92e5d`
 
-**Evidence weight:** A — feature-specific source commit.
+Documentation emphasizes the learning loop, skills, memory, session search and self-improvement framing.
 
-### 2026-03-06 — Hermes “self-improving AI agent” public positioning
+**Evidence weight:** B for chronology; documentation language is weaker than executable source.
 
-**Commit:** `2dbbedc05a7fec7a4efe7db0f305e15393d92e5d`  
-**URL:** https://github.com/NousResearch/hermes-agent/commit/2dbbedc05a7fec7a4efe7db0f305e15393d92e5d
-
-Public documentation was changed to emphasize a built-in learning loop, autonomous skill creation, skill improvement, persistent knowledge, session search and cross-session user modeling.
-
-**Evidence weight:** B for technical chronology; documentation/marketing language is weaker than executable implementation.
-
-### 2026-03-19 — Cory submits sanitized COSMOS project directly to upstream Hermes
+## 2026-03-19 - Cory submits sanitized COSMOS project directly to upstream Hermes
 
 **PR:** `NousResearch/hermes-agent#2088`  
 **Title:** `feat: add sanitized Cosmos project for audit review`  
 **URL:** https://github.com/NousResearch/hermes-agent/pull/2088
 
-The PR was opened by `NavisWORLD`, targeted upstream `main`, contained two commits and was later closed without merge.
+The PR establishes formal submission/contact chronology. It was opened after Hermes's Feb. 19 persistent-memory and Feb. 20 skill-management commits.
 
-Important adverse-timeline fact preserved intentionally: **this PR came after the 2026-02-19 persistent-memory commit and 2026-02-20 skill-management commit.** Therefore PR #2088 cannot, by itself, establish that those February features came from this submission.
-
-**Evidence weight:** A for submission/contact chronology; not evidence of copying.
+**Critical boundary:** PR #2088 cannot by itself establish access for those earlier February features.
 
 ---
 
-## 3. Feature comparison
+# 3. Mixed-lineage corrections
+
+## Later ver4.2 repository is not a clean 2025 source anchor
+
+`NavisWORLD/The-Cosmic-Davis-12D-Hebbian-Transformer-ver.4.2` was created on **2026-02-28T10:33:19Z** and contains identifiable third-party/Farnsworth history.
+
+A concrete example is commit `6f201aa79898247d000391d6c375341959f7b60c`, authored by **Timo White** on **2026-01-25**, which added files described as `Q1 2025 Enhanced Memory features`.
+
+Therefore a file such as `tests/test_q1_2025_features.py` cannot be used to establish Cory Q1-2025 chronology merely from its name/comment. Imported history keeps its actual author/date.
+
+## `Cosmos` is a later mixed-lineage consolidation
+
+`NavisWORLD/Cosmos` was created on **2026-02-28T23:45:11Z** and contains clear Farnsworth ancestry, including README material identifying Farnsworth and linking `timowhite88/Farnsworth`.
+
+COSMOS-specific Cory additions can be evaluated commit-by-commit, but the whole repository is not treated as wholly Cory-authored historical source.
+
+These corrections make the earlier independent 2025 receipts more important, not less.
+
+---
+
+# 4. Feature comparison
 
 | Technical concept | Earliest relevant CST/COSMOS evidence catalogued | Relevant Hermes evidence | Current assessment |
 |---|---|---|---|
-| Adaptive bounded internal memory | 2025-01-30 PHERACLEASE rolling particle memory + named learning mechanism | later Hermes memory systems | **Earlier public technical artifact located; different architecture** |
-| Persistent accumulated observations | 2025-01-30 `cosmic_brain.json` read/append/write | 2026-02-19 persistent memory/session stores | **Earlier persistence mechanism; not equivalent to full session memory** |
-| Persistent model memory across restarts | 2025-02-26 CST `state_file`, startup `load_state()`, `save_state()` | 2026-02-19 explicit persistent-memory system | **Strong earlier public CST disclosure of the general mechanism** |
-| Bounded/pruned retained model memory | 2025-02-26 memory limit + oldest-entry removal | 2026-02-19 bounded curated memory | **Strong conceptual overlap; implementation differs** |
-| Automatic restoration at initialization | 2025-02-26 constructor invokes `load_state()` | 2026-02-19 persistent memory injected per session | **Strong functional overlap** |
-| Autonomous perception→cognition→action + learning goals | 2025-10-28 A-LMI | 2026 Hermes closed-learning-loop positioning | **Earlier A-LMI public architecture; implementation differs** |
-| Multi-layer retrievable memory | 2025-10-28 vector DB + object store + temporal knowledge graph | 2026 MEMORY/USER + SQLite/FTS5 | **Earlier A-LMI architecture; materially different stores** |
-| Executable online learning + local persistence | 2025-11-10 backprop adapter + neighbor memory + local save/load | later Hermes learning/memory systems | **Strong technical enablement receipt, not exact architecture identity** |
-| Fixed-capacity continuous pattern memory | 2025-11-15 `RingBuffer(128)` learning system | later Hermes retained learning knowledge | **Earlier bounded continuous-learning implementation; different subject/application** |
-| Memory-augmented transformer retrieval | 2025-11-21 episodic embedding/x12 circular buffer + similarity retrieval | later Hermes external/session memory | **Earlier executable mechanism; substantially different memory placement** |
-| Autonomous continuous study/training | 2025-11-22 curriculum selection + training + checkpoint loop | later Hermes self-improvement/skills | **Earlier self-directed training receipt; not exact procedural-skill writing** |
-| Generic tool-calling agent | No Cory-priority claim made here | Present in 2025-07-23 initial Hermes commit | **No Cory-priority finding** |
-| Agent writes/edits reusable `SKILL.md` documents | Not established by catalogued pre-Hermes evidence | 2026-02-20 explicit skill management | **Not established** |
+| Adaptive bounded internal memory | 2025-01-30 PHERACLEASE rolling memory + named learning mechanism | later Hermes memory systems | **Earlier technical artifact located; different architecture** |
+| Persistent accumulated observations | 2025-01-30 `cosmic_brain.json` accumulation | 2026-02-19 memory/session stores | **Earlier persistence mechanism; not equivalent to full session memory** |
+| Persistent model memory across restarts | 2025-02-26 CST state file + startup `load_state()` | 2026-02-19 explicit persistent-memory system | **Strong earlier CST disclosure of the general mechanism** |
+| Bounded/pruned retained model memory | 2025-02-26 oldest-entry removal | 2026-02-19 bounded curated memory | **Strong conceptual overlap; implementation differs** |
+| Automatic restoration at initialization | 2025-02-26 constructor invokes `load_state()` | 2026-02-19 session/startup memory injection | **Strong functional overlap** |
+| Maintained evolving environment/world state | 2025-05-21 Python/Unity CST simulation with sensory updates | not used here as a direct Hermes claim | **Important Cory lineage receipt; no global-first claim** |
+| Autonomous learning / knowledge-gap loop | 2025-10-28 02:21 original A-LMI | 2026 Hermes closed-loop/self-improvement positioning | **Earlier A-LMI architecture; implementation differs** |
+| Multi-layer retrievable memory | 2025-10-28 A-LMI Milvus + MinIO + Neo4j | 2026 MEMORY/USER + SQLite/FTS5 | **Earlier A-LMI multi-store architecture; materially different stores** |
+| Executable online learning + local persistence | 2025-11-10 backprop adapter + neighbor memory + save/load | later Hermes learning/memory systems | **Strong enablement receipt, not exact architecture identity** |
+| Fixed-capacity continuous pattern memory | 2025-11-15 `RingBuffer(128)` | later Hermes retained learning knowledge | **Earlier bounded implementation; different application** |
+| Memory-augmented transformer retrieval | 2025-11-21 episodic embedding/x12 retrieval | later Hermes external/session memory | **Earlier executable mechanism; different memory placement** |
+| Autonomous continuous study/training | 2025-11-22 curriculum/training/checkpoint loop | later Hermes self-improvement/skills | **Earlier self-directed training; not exact procedural-skill writing** |
+| Generic tool-calling agent | no Cory-priority claim | present 2025-07-23 in Hermes | **No Cory-priority finding** |
+| Agent writes/edits reusable `SKILL.md` documents | not established pre-Hermes | 2026-02-20 explicit skill management | **Not established** |
 
 ---
 
-## 4. Strongest currently supportable technical propositions
+# 5. Strongest currently supportable propositions
 
-> **By January 30, 2025, the public `PHERACLEASE/test` repository contained executable CosmicSynapse-oriented software with explicit rolling/bounded internal memory, a named learning mechanism that updates retained memory, memory-informed adaptive behavior, and persistent accumulation of timestamped observations in `cosmic_brain.json`.**
+> **By January 30, 2025, the `PHERACLEASE/test` source record contained executable CosmicSynapse-oriented software with rolling/bounded internal memory, a named learning mechanism, memory-informed adaptive behavior and persistent accumulation in `cosmic_brain.json`.**
 
-> **By February 26, 2025, Cory Davis / NavisWORLD had publicly disclosed executable CST software in which a model maintained internal memory, modified that memory through an explicit learning operation, bounded retained memory, serialized learned state to persistent storage, and restored that state during later initializations.**
+> **By February 26, 2025, Cory Davis / NavisWORLD had disclosed executable CST software in which a model maintained internal memory, modified it through an explicit learning operation, bounded retained memory, serialized state and restored that state during later initialization.**
 
-> **By October 28, 2025, Cory Davis / NavisWORLD had publicly disclosed an autonomous-agent architecture organized around perception, cognition, multi-layer memory, reasoning, autonomous investigation, action and self-directed learning goals.**
+> **By May 21, 2025, Cory Davis / NavisWORLD had disclosed an evolving simulated-environment architecture that maintained entity/world state over time, consumed audio/sensory input, bridged Python and Unity state, and recorded timestamped state observations.**
 
-> **By November 2025, the public CST/COSMOS record also included executable backprop learning, local save/load persistence, fixed-capacity pattern memory, a similarity-retrieved episodic-memory transformer, and a continuous self-directed model-training/checkpoint loop.**
+> **By October 28, 2025 at 02:21 UTC, Cory Davis / NavisWORLD had disclosed an autonomous learning architecture that combined perception, multi-store memory, knowledge-gap discovery, hypothesis generation and planned actions/experiments in a closed learning loop.**
+
+> **By November 2025, the CST/COSMOS record also included executable backprop learning, local save/load persistence, fixed-capacity pattern memory, similarity-retrieved episodic memory and a continuous self-directed model-training/checkpoint loop.**
 
 These are chronology/provenance statements. They are not findings of legal anticipation, infringement, derivation or copying.
 
 ---
 
-## 5. Zenodo / research archive
+# 6. Findings deliberately not claimed
+
+This archive does not claim:
+
+- global invention of persistent AI memory;
+- global invention of world models or spatial intelligence;
+- global invention of autonomous agents, RAG, vector databases, Hebbian learning, replay buffers, checkpointing or skill libraries;
+- Cory priority over generic tool-calling agents;
+- a pre-Hermes exact equivalent of Hermes's agent-authored reusable `SKILL.md` mechanism;
+- that social reactions prove repository review;
+- that the March 19 PR caused features published before March 19;
+- that a later mixed-lineage repository can be flattened into wholly Cory-authored history;
+- that a filename, README slogan or global-first marketing sentence substitutes for source evidence.
+
+---
+
+# 7. Research archive
 
 Related research archive / DOI: **10.5281/zenodo.17574447**  
 https://doi.org/10.5281/zenodo.17574447
 
-The DOI archive is useful as a durable scholarly/research record and should be read together with source-control history and test materials. For the 2025 software chronology in this archive, immutable Git commit dates remain the primary time anchors.
-
----
-
-## 6. What the audit rejected or downgraded
-
-- `MemoryRift.cs` was inspected and is a visualization component rather than a persistence implementation; it is excluded from the strong memory claim set.
-- Current later `archive/` paths are not used to backdate files. Historical commit paths and diffs are used instead.
-- Commit messages are discovery clues, not enough by themselves when executable source can be inspected.
-- A declared optimizer without an actual training step is not counted as completed training.
-- No pre-Hermes exact `SKILL.md` self-writing mechanism was found in the reviewed CST/COSMOS source.
-- Screenshots are separated from source-code chronology and cannot substitute for immutable source history.
-
----
-
-## 7. What this archive expressly does NOT claim
-
-This archive does **not** claim that:
-
-1. Nous Research copied Cory Davis's code.
-2. Any Nous developer had access to a particular CST file before writing a particular Hermes feature unless independent evidence establishes that fact.
-3. Cory Davis owns Hermes-Agent or its independently authored code.
-4. Every Hermes feature is anticipated by CST/COSMOS.
-5. Similarity alone proves copyright infringement.
-6. Cory globally invented persistent AI memory, RAG/vector memory, replay buffers, autonomous agents, checkpointing or Hebbian learning.
-7. A social-media block, like, repost or reply is evidence of guilt or wrongdoing.
-8. An unrelated third-party PR merged into Hermes proves Cory's PR was merged.
-
-Preserving contrary and limiting facts is intentional. A chronology is stronger when it records what the evidence does **not** prove.
-
----
-
-## 8. Preservation methodology
-
-- Source commits are identified by immutable commit IDs and repository URLs.
-- File-specific commit history is used where a later repository contains reorganized paths.
-- Documentary screenshots should be preserved without editorial alteration.
-- Platform-native message URLs/export IDs should be added when available.
-- Future evidence should be hashed with SHA-256 and indexed separately from interpretation.
-
----
-
-## 9. Research/legal references
-
-- USPTO MPEP § 2152: https://www.uspto.gov/web/offices/pac/mpep/s2152.html
-- USPTO MPEP § 2131: https://www.uspto.gov/web/offices/pac/mpep/s2131.html
-- USPTO MPEP § 2121: https://www.uspto.gov/web/offices/pac/mpep/s2121.html
-
-Nothing in this repository is legal advice.
+The DOI is useful as a durable scholarly/research record. Earlier source commits remain the primary anchors for the 2025 software chronology catalogued here.
