@@ -11,8 +11,11 @@
 1. [`MASTER_RECEIPT_AUDIT.md`](./MASTER_RECEIPT_AUDIT.md) — expanded source-level chronology and audit findings.
 2. [`PRIOR_ART_EVIDENCE.md`](./PRIOR_ART_EVIDENCE.md) — focused CST/COSMOS ↔ Hermes feature comparison.
 3. [`EARLY_SOURCE_CHRONOLOGY.md`](./EARLY_SOURCE_CHRONOLOGY.md) — January 2025 `PHERACLEASE/test` receipt and February transition to CST-LM save/load restoration.
-4. [`EVIDENCE_INDEX.md`](./EVIDENCE_INDEX.md) — screenshot/exhibit index with conservative evidentiary weights.
-5. [`screenshots/`](./screenshots/) — documentary exhibits when present.
+4. [`INTERACTION_AND_ACCESS_CHRONOLOGY_2026-08-13.md`](./INTERACTION_AND_ACCESS_CHRONOLOGY_2026-08-13.md) — neutral chronology of public interaction, community disclosure, access opportunity, formal submission, and later statement consistency.
+5. [`NEW_EVIDENCE_2026-08-13.md`](./NEW_EVIDENCE_2026-08-13.md) — concise index of the newly supplied X/Discord/GitHub evidence categories.
+6. [`SCREENSHOT_HASH_MANIFEST_2026-08-13_ADDENDUM.md`](./SCREENSHOT_HASH_MANIFEST_2026-08-13_ADDENDUM.md) — SHA-256 fingerprints for the newly supplied source screenshots.
+7. [`EVIDENCE_INDEX.md`](./EVIDENCE_INDEX.md) — screenshot/exhibit index with conservative evidentiary weights.
+8. [`screenshots/`](./screenshots/) — documentary exhibits when present.
 
 ## Core chronology in one paragraph
 
@@ -27,6 +30,25 @@ The earliest presently located public CST/CosmicSynapse memory-and-learning sour
 - **2025-11-15 — continuous-learning music system:** fixed-capacity `RingBuffer(128)` pattern memory and adaptation state.
 - **2025-11-21 — 12D Hebbian Transformer:** circular episodic embedding/x12 memory, similarity retrieval, Hebbian attention and gradient training.
 - **2025-11-22 — autonomous study:** continuous source selection, model training, progress logging and checkpoint saving.
+
+## Interaction / access chronology added 2026-08-13
+
+The archive now separately records **interaction and access opportunity** so those facts are not conflated with technical derivation.
+
+The newly indexed record includes:
+
+- direct Discord interaction between the Teknium account and Phera;
+- Phera/COSMOS technical material posted inside the Hermes-agent Discord community;
+- a NOUS-badged participant asking a mechanism-specific question about **agent coordination / state persistence** after a Cosmos contribution was posted;
+- repeated X reactions/reposts involving Phera technical/project demonstrations;
+- an account-level reaction to a post telling Teknium/Nous that a contribution was ready for review;
+- a screenshot showing both Teknium and the official Nous Research account reacting to a Phera reply about preparing/entering a project;
+- the formal **2026-03-19** upstream PR `NousResearch/hermes-agent#2088`, which submitted a substantial COSMOS code tree for audit review;
+- later public statements that can be compared against the earlier interaction record without inferring motive or intent.
+
+The evidence supports **prior interaction, exposure, community disclosure and access opportunity**. It does **not** by itself establish that a particular maintainer opened/read/used source code or that later Hermes code was derived from COSMOS.
+
+A critical date boundary is retained: PR #2088 was opened **after** the February 19-20, 2026 Hermes persistent-memory / agent-created-skills commits. It therefore cannot be used as access evidence for those earlier February features.
 
 ## Primary references
 
@@ -46,6 +68,8 @@ The earliest presently located public CST/CosmicSynapse memory-and-learning sour
 ## Findings deliberately NOT claimed
 
 This archive does not claim Cory priority over generic tool-calling agents, and the current pre-Hermes record does not establish an exact equivalent of Hermes's later agent-authored reusable `SKILL.md` procedural-skill mechanism. It also does not claim global first invention of persistent AI memory, RAG/vector retrieval, replay buffers, autonomous agents, Hebbian learning or checkpointing; those broader technical areas have substantial third-party history.
+
+The interaction record also does not claim that social-media reactions prove repository review, that an organization-account reaction identifies a specific human operator, or that the March 19 PR caused features published before March 19.
 
 ## Legal research references
 
