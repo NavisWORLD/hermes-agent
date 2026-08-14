@@ -1,18 +1,28 @@
 # Early CST / CosmicSynapse Source Chronology
 
-This file records source-control facts and technical mechanisms found during a historical audit of public repositories. It makes no allegation about any third party.
+This file records source-control facts and technical mechanisms found during a historical audit of GitHub-hosted repositories. It makes no allegation about any third party.
 
-## PHERACLEASE/test — January 2025
+> **Public-accessibility caveat:** a platform-native GitHub commit date establishes a strong source-control timestamp, but patent-law public accessibility is a separate question. Current repository visibility does not by itself prove the historical public/private state on every earlier date. For legal-facing use, treat these as dated GitHub-hosted source artifacts and candidate prior-art references unless historical public accessibility is independently established.
+
+## PHERACLEASE/test - January 2025
 
 Repository: `PHERACLEASE/test`
 
 Historical source file: `test1maybe.py`
+
+Repository metadata currently shows:
+
+- repository creation: **2025-01-15T02:26:18Z**;
+- relevant push/commit timestamp: **2025-01-30T07:13:05Z**;
+- current visibility: public.
 
 First located commit adding the file: **2025-01-30T07:13:05Z**
 
 Commit: `10e86764c6d743b5ceaaaf1baab7279a0d6f0ba5`
 
 URL: https://github.com/PHERACLEASE/test/commit/10e86764c6d743b5ceaaaf1baab7279a0d6f0ba5
+
+GitHub's commit record identifies GitHub/web-flow as committer and reports a valid verification record for the January 30 commit. The commit message includes `open sourcing`.
 
 The January 30 source contains executable mechanisms including:
 
@@ -29,20 +39,24 @@ A PyTorch model and optimizer are instantiated in the file, but this audit did n
 
 ### Conservative technical statement
 
-By January 30, 2025, this public repository contained executable CosmicSynapse-oriented software with rolling/bounded internal memory, an explicit memory-update learning mechanism, memory-informed adaptive behavior, and persistent accumulation of observations in `cosmic_brain.json`.
+By January 30, 2025, GitHub's source-control record contains a CosmicSynapse-oriented source artifact with rolling/bounded internal memory, an explicit memory-update learning mechanism, memory-informed adaptive behavior, and persistent accumulation of observations in `cosmic_brain.json`.
 
 ### Identity/provenance note
 
 Archive maintainer Cory Davis identifies `PHERACLEASE` as a legacy account. The currently inspected public GitHub profile metadata does not independently cross-link `PHERACLEASE` and `NavisWORLD`, so the account-attribution statement is kept separate from the independently verifiable repository timestamp and source contents.
 
-## NavisWORLD/CosmicSynapse — February 2025
+## NavisWORLD/CosmicSynapse - February 2025
 
 Commit: `f4e7da1f1bf3fba07a23a3de932e675bea5078bd`
 
-Date: **2025-02-26**
+Date: **2025-02-26T03:46:15Z**
 
 URL: https://github.com/NavisWORLD/CosmicSynapse/commit/f4e7da1f1bf3fba07a23a3de932e675bea5078bd
 
-This later public artifact provides a cleaner AI-state persistence mechanism: `memory`, an explicit `learn()` path, bounded retention, `save_state()`, and constructor-time `load_state()` restoration.
+Repository metadata currently shows creation at **2025-02-26T03:44:15Z** and current public visibility. The relevant upload commit identifies GitHub/web-flow as committer and GitHub reports a valid verification record.
 
-Accordingly, the January artifact is the earliest presently located public CST/CosmicSynapse memory-and-learning implementation in this audit, while the February artifact remains the stronger receipt for automatic save/load restoration of model memory across executions.
+This later source artifact provides a cleaner AI-state persistence mechanism: `memory`, an explicit `learn()` path, bounded retention, `save_state()`, and constructor-time `load_state()` restoration.
+
+Accordingly, the January artifact is the earliest presently located CST/CosmicSynapse memory-and-learning GitHub source artifact in this audit, while the February artifact remains the stronger receipt for automatic save/load restoration of model memory across executions.
+
+For the adversarial review and older third-party technical baseline, see [`RED_TEAM_AND_THIRD_PARTY_BASELINE.md`](./RED_TEAM_AND_THIRD_PARTY_BASELINE.md).
