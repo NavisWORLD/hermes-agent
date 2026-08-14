@@ -45,6 +45,8 @@ By January 30, 2025, GitHub's source-control record contains a CosmicSynapse-ori
 
 Archive maintainer Cory Davis identifies `PHERACLEASE` as a legacy account. The currently inspected public GitHub profile metadata does not independently cross-link `PHERACLEASE` and `NavisWORLD`, so the account-attribution statement is kept separate from the independently verifiable repository timestamp and source contents.
 
+---
+
 ## NavisWORLD/CosmicSynapse - February 2025
 
 Commit: `f4e7da1f1bf3fba07a23a3de932e675bea5078bd`
@@ -55,8 +57,58 @@ URL: https://github.com/NavisWORLD/CosmicSynapse/commit/f4e7da1f1bf3fba07a23a3de
 
 Repository metadata currently shows creation at **2025-02-26T03:44:15Z** and current public visibility. The relevant upload commit identifies GitHub/web-flow as committer and GitHub reports a valid verification record.
 
-This later source artifact provides a cleaner AI-state persistence mechanism: `memory`, an explicit `learn()` path, bounded retention, `save_state()`, and constructor-time `load_state()` restoration.
+This later source artifact provides a cleaner AI-state persistence mechanism:
 
-Accordingly, the January artifact is the earliest presently located CST/CosmicSynapse memory-and-learning GitHub source artifact in this audit, while the February artifact remains the stronger receipt for automatic save/load restoration of model memory across executions.
+- `self.memory = []`;
+- an explicit `learn()` path;
+- memory bounded to 1,000 retained entries;
+- `save_state()` persistence;
+- constructor-time `load_state()` restoration.
 
-For the adversarial review and older third-party technical baseline, see [`RED_TEAM_AND_THIRD_PARTY_BASELINE.md`](./RED_TEAM_AND_THIRD_PARTY_BASELINE.md).
+The larger CST simulation in the same upload also carries multiple histories and `cosmic_brain.json` state surfaces.
+
+### Conservative technical statement
+
+By February 26, 2025, the GitHub source-control record contains executable CST software with explicit model memory, learning, bounded retention, serialization and automatic restoration during a later initialization.
+
+### Implementation-quality boundary
+
+This is strong evidence of the disclosed architecture, not a claim that every standalone historical file was polished production software. Source quality and source chronology are separate questions.
+
+---
+
+## NavisWORLD/The-theory-of-CST - April / May 2025
+
+The repository had a public CST theory/simulation surface by April 2025. The stronger mechanism-level receipt located in the audit is the May 21 source upload below.
+
+Commit: `b96a56501cb447cb68e2683915d22024a0c526dd`
+
+Date: **2025-05-21T08:04:53Z**
+
+URL: https://github.com/NavisWORLD/The-theory-of-CST/commit/b96a56501cb447cb68e2683915d22024a0c526dd
+
+The historical source includes a substantial Python + Unity simulation architecture with:
+
+- evolving entities with retained position, velocity, energy/synaptic and ecosystem state;
+- high-dimensional simulation variables projected into a live 3D environment;
+- audio/microphone features feeding update behavior;
+- Python-to-Unity communication over TCP;
+- procedural generation of planets, atmospheres, ecosystems and visual properties;
+- timestamped/token-oriented state logging through `MemoryNodeLog` surfaces;
+- ongoing entity interaction and world evolution rather than a one-shot stateless render.
+
+### Conservative technical statement
+
+By May 21, 2025, the GitHub source-control record contains CST software that maintains and updates an evolving simulated environment, consumes live sensory/audio input, communicates state between a Python backend and Unity frontend, and records state observations over time.
+
+### World-model / spatial-intelligence boundary
+
+This source is relevant to the chronology of Cory's own persistent world-state / environment-modeling direction. It does **not** establish global invention of world models, model-based reinforcement learning or spatial intelligence, all of which have earlier third-party history.
+
+---
+
+## Chronology result
+
+The January artifact remains the earliest presently located CST/CosmicSynapse memory-and-learning GitHub source artifact in this audit. The February artifact remains the stronger receipt for automatic save/load restoration of model memory across executions. The May artifact adds a distinct milestone: maintained **environment/world state**, sensory input, temporal evolution and a Python/Unity bridge.
+
+For later autonomous-agent chronology, see [`MASTER_RECEIPT_AUDIT.md`](./MASTER_RECEIPT_AUDIT.md). For the adversarial review and older third-party technical baseline, see [`RED_TEAM_AND_THIRD_PARTY_BASELINE.md`](./RED_TEAM_AND_THIRD_PARTY_BASELINE.md).
