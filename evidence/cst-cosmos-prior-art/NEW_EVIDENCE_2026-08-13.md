@@ -6,6 +6,16 @@ This file indexes additional screenshots supplied by Cory Davis / Phera during t
 
 The screenshots are used only for what they visibly support. Account reactions, follows, reposts, replies, and community-channel posts can establish **interaction, exposure, and access opportunity**. They do not by themselves establish that source code was opened, technically reviewed, copied, or used.
 
+## Review copies now in the repository
+
+Compressed review copies are stored at [`screenshots/2026-08-13-addendum/`](./screenshots/2026-08-13-addendum/):
+
+- [`x-interactions-contact-sheet.webp`](./screenshots/2026-08-13-addendum/x-interactions-contact-sheet.webp) — selected X interaction/visibility exhibits.
+- [`discord-github-contact-sheet.webp`](./screenshots/2026-08-13-addendum/discord-github-contact-sheet.webp) — selected Discord and GitHub submission/contact exhibits.
+- [`official-nous-teknium-project-reaction-review-copy.webp`](./screenshots/2026-08-13-addendum/official-nous-teknium-project-reaction-review-copy.webp) — focused review copy of the screenshot showing Teknium and the official Nous Research account reacting to a Phera project-entry reply.
+
+These are **compressed display copies**, not replacements for the originals. The exact source-file SHA-256 fingerprints are preserved in [`SCREENSHOT_HASH_MANIFEST_2026-08-13_ADDENDUM.md`](./SCREENSHOT_HASH_MANIFEST_2026-08-13_ADDENDUM.md).
+
 ## Newly added categories
 
 ### Repeated Teknium interaction with Phera technical/project posts
@@ -34,7 +44,7 @@ This is preserved only as ecosystem-visibility context. A follow is not treated 
 
 ### Discord project disclosure
 
-Cory reports that project materials were also uploaded into a project section of the Nous/Hermes Discord. Existing screenshots in this archive already show Phera/COSMOS material and technical discussion inside `#hermes-agent`.
+Cory reports that project materials were also uploaded into a project section of the Nous/Hermes Discord. Existing screenshots in this archive show Phera/COSMOS material and technical discussion inside `#hermes-agent`.
 
 Where the original project-section upload messages and attachment timestamps are available, they should be preserved separately as first-party Discord disclosure receipts.
 
