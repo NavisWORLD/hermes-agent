@@ -15,6 +15,23 @@ The screenshots associated with this archive are preserved as documentary contex
 | 09 | `09_discord_qbit_memory_discussion.png` | Phera publicly discussing “qbit memory”/token savings in Hermes Discord; another participant asks about memory-before-token usage; nearby session-continuity discussion | **B — public technical-disclosure/community-awareness context.** Exact Discord IDs/timestamps should be preserved when available. |
 | 10 | `10_discord_cosmos_contribution_state_persistence.png` | Phera posts COSMOS contribution link; a NOUS-badged participant calls it a “Nice contribution” and asks about “agent coordination or state persistence across tasks” | **B+ — strongest screenshot for direct technical awareness/contact.** Still not proof of copying or pre-February access. |
 
+## 2026-08-13 addendum
+
+Additional source screenshots were fingerprinted and indexed in [`SCREENSHOT_HASH_MANIFEST_2026-08-13_ADDENDUM.md`](./SCREENSHOT_HASH_MANIFEST_2026-08-13_ADDENDUM.md). They expand the interaction/access record without changing the archive's interpretation rules.
+
+### Added interaction categories
+
+| Category | What the new exhibits support | Weight / use |
+|---|---|---|
+| Repeated Teknium reactions to Phera technical/project posts | Multiple likes/reactions involving 12D/CST visuals, integration, live-demo and contribution-review posts | **C/B — repeated public interaction/exposure.** Does not prove linked source was opened. |
+| Teknium reaction to “commit ready for review” messaging | Account-level reaction to a post explicitly telling Teknium/Nous that a contribution was ready for review | **B/C — submission-awareness corroboration.** Native GitHub PR remains stronger. |
+| Official Nous Research account reaction | Screenshot shows Teknium and the official Nous Research account both reacting to a Phera reply about preparing/entering a project | **C/B — organization-account visibility.** Does not identify the human operator or prove technical review. |
+| Discord memory/project demonstrations | Phera posts COSMOS runtime/memory-consolidation material inside `#hermes-agent` | **B — community disclosure/access-opportunity context.** |
+| Later broad no-prior-interaction recollection | Public thread statements can be compared with earlier direct replies, reposts and reactions | **B — statement-consistency analysis only.** Motive/intent is not inferred. |
+| Investor/ecosystem follow | Verified account bio identifying a Delphi Ventures founding-partner role displays “Follows you” | **D/C — visibility context only.** A follow is not endorsement or evidence of review. |
+
+For the complete interpretation, see [`INTERACTION_AND_ACCESS_CHRONOLOGY_2026-08-13.md`](./INTERACTION_AND_ACCESS_CHRONOLOGY_2026-08-13.md) and [`NEW_EVIDENCE_2026-08-13.md`](./NEW_EVIDENCE_2026-08-13.md).
+
 ## Evidence hierarchy
 
 **A — Primary technical/provenance evidence**  
